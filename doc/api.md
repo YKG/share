@@ -29,7 +29,7 @@
 ## /document/create
 
 - Request
-    ```javascript
+    ```json5
     {
       "body": {
         ... // Document Entity
@@ -50,7 +50,7 @@
     ```
     
     > 参数非法 示例
-    ```javascript
+    ```json5
     {
       "errCode": 400,
       "body": {
@@ -62,7 +62,7 @@
 ## /document/get
 
 - Request
-    ```javascript
+    ```json5
     {
       "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
     }
@@ -71,7 +71,7 @@
 - Response
 
     > 正常返回
-    ```javascript
+    ```json5
     {
      "errCode": 0,
      "body": {
@@ -81,7 +81,7 @@
     ```
     
     > 异常返回 示例
-    ```javascript
+    ```json5
     {
       "errCode": 404,
       "body": {
@@ -93,7 +93,7 @@
 ## /document/send
 
 - Request
-    ```javascript
+    ```json5
     {
       "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
     }
@@ -102,7 +102,7 @@
 - Response
 
     > 正常返回 示例
-    ```javascript
+    ```json5
     {
      "errCode": 0,
      "body": {
@@ -112,7 +112,7 @@
     ```
     
     > 异常返回 示例
-    ```javascript
+    ```json5
     {
       "errCode": 404,
       "body": {
@@ -124,7 +124,7 @@
 ## /document/status/get
 
 - Request
-    ```javascript
+    ```json5
     {
       "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
     }
@@ -133,7 +133,7 @@
 - Response
 
     > 正常返回 示例
-    ```javascript
+    ```json5
     {
      "errCode": 0,
      "body": {
@@ -143,7 +143,7 @@
     ```
     
     > 异常返回 示例
-    ```javascript
+    ```json5
     {
       "errCode": 404,
       "body": {
@@ -155,7 +155,7 @@
 ## /document/status/update
 
 - Request
-    ```javascript
+    ```json5
     {
       "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff",
       "documentStatus": "ACCEPTED"
@@ -165,7 +165,7 @@
 - Response
 
     > 正常返回 示例
-    ```javascript
+    ```json5
     {
      "errCode": 0,
      "body": {
@@ -175,7 +175,7 @@
     ```
     
     > 异常返回 示例
-    ```javascript
+    ```json5
     {
       "errCode": 404,
       "body": {
@@ -188,7 +188,7 @@
 
 - Request
     > 请求 示例
-    ```javascript
+    ```json5
     {
       "param1": "param1 value",
       "param2": "param2 value",
@@ -200,7 +200,7 @@
 - Response
 
     > 正常返回 示例
-    ```javascript
+    ```json5
     {
      "errCode": 0,
      "body": [
@@ -236,7 +236,7 @@
 
 - Request
     > 请求 示例
-    ```javascript
+    ```json5
     {
       "toDocType": "Invoice",
       "body": {
@@ -248,7 +248,7 @@
 - Response
 
     > 正常返回
-    ```javascript
+    ```json5
     {
      "errCode": 0,
      "body": {
@@ -258,7 +258,7 @@
     ```
     
     > 异常返回 示例
-    ```javascript
+    ```json5
     {
       "errCode": 400,
       "body": {
@@ -271,7 +271,7 @@
 ## Document Entity (`{doc}`)
 
 - Order Sample (JSON)
-    ```javascript
+    ```json5
     {
         "Order": {
             "ID": {
@@ -485,7 +485,7 @@
 ## Document Info Entity (`{docInfo}`)
 
 - Sample
-    ```javascript
+    ```json5
     {
         "documentUUID": "704e90ab-84e6-431f-b051-b8b2d1ee1015",
         "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
