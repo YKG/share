@@ -4,12 +4,12 @@
 | URL                       | Method           | Body               | Return           | Function         |
 | -------------             | -------------    |-------------       |-------------     |-------------     |
 | [/document/create](#documentcreate)          | POST             | {doc}              | {docUUID}          | 创建文档          |
-| /document/get             | GET              | {docUUID}          | {doc}            | 获取文档          |
-| /document/send            | POST             | {docUUID, doc}     |                  | 发送文档          |
-| /document/status/get      | GET              | {docUUID}          | {docStatus}      | 获取文档状态      |
-| /document//status/update  | POST             | {docUUID, docStatus} | {status}       | 更新文档状态      |
-| /document/query           | GET              |                    | {docInfoList}    | 获取文档列表      |
-| /document/convert         | POST             | {doc, toDocType}   | {doc}            | 文档转换          |
+| [/document/get](#documentget)             | GET              | {docUUID}          | {doc}            | 获取文档          |
+| [/document/send](#documentget)            | POST             | {docUUID, doc}     |                  | 发送文档          |
+| [/document/status/get](#documentstatusget)      | GET              | {docUUID}          | {docStatus}      | 获取文档状态      |
+| [/document//status/update](#documentstatusupdate)  | POST             | {docUUID, docStatus} | {status}       | 更新文档状态      |
+| [/document/query](#documentquery)           | GET              |                    | {docInfoList}    | 获取文档列表      |
+| [/document/convert](#documentconvert)         | POST             | {doc, toDocType}   | {doc}            | 文档转换          |
 
 
 ## I/O Convention
@@ -245,12 +245,15 @@
     - Sample
         ```json
         {
-            "id": "704e90ab-84e6-431f-b051-b8b2d1ee1015",
+            "documentUUID": "704e90ab-84e6-431f-b051-b8b2d1ee1015",
             "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
-            "status": "DRAFT",
             "postedAt": "2018-06-04T10:09:37.071+08:00",
+            "status": "SENT",
+            "ID": "1001",
             "sender": "SenderParty Name",
             "receiver": "ReceiverParty Name",
+            "TotalAmount": 234,
+            "TaxTotalAmount": 34,
             "docType": "Order"
         }
         ```
@@ -293,9 +296,7 @@
 - Request
     ```json
     {
-      "body": {
-        "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
-      }
+      "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
     }
     ```
 
@@ -317,6 +318,182 @@
       "errCode": 404,
       "body": {
         "errMsg": "文档没有找到"
+      }
+    }
+    ```
+            
+## /document/send
+
+- Request
+    ```json
+    {
+      "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+    }
+    ```
+
+- Response
+
+    > 正常返回
+    ```json
+    {
+     "errCode": 0,
+     "body": {
+       ...
+     }
+    }
+    ```
+    
+    > 异常返回
+    ```json
+    {
+      "errCode": 404,
+      "body": {
+        "errMsg": "文档没有找到"
+      }
+    }
+    ```            
+
+## /document/status/get
+
+- Request
+    ```json
+    {
+      "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+    }
+    ```
+
+- Response
+
+    > 正常返回 示例
+    ```json
+    {
+     "errCode": 0,
+     "body": {
+        "documentStatus": "ACCEPTED"
+     }
+    }
+    ```
+    
+    > 异常返回 示例
+    ```json
+    {
+      "errCode": 404,
+      "body": {
+        "errMsg": "文档没有找到"
+      }
+    }
+    ```
+    
+## /document/status/update
+
+- Request
+    ```json
+    {
+      "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "documentStatus": "ACCEPTED"
+    }
+    ```
+
+- Response
+
+    > 正常返回 示例
+    ```json
+    {
+     "errCode": 0,
+     "body": {
+        "documentStatus": "ACCEPTED"
+     }
+    }
+    ```
+    
+    > 异常返回 示例
+    ```json
+    {
+      "errCode": 404,
+      "body": {
+        "errMsg": "文档没有找到"
+      }
+    }
+    ```
+    
+## /document/query
+
+- Request
+    ```json
+    {
+      "param1": "param1 value",
+      "param2": "param2 value",
+      "param3": "param3 value",
+      ...
+    }
+    ```
+
+- Response
+
+    > 正常返回 示例
+    ```json
+    {
+     "errCode": 0,
+     "body": [
+        {
+            "documentUUID": "704e90ab-84e6-431f-b051-b8b2d1ee1015",
+            "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
+            "postedAt": "2018-06-04T10:09:37.071+08:00",
+            "status": "SENT",
+            "ID": "1001",
+            "sender": "SenderParty Name",
+            "receiver": "ReceiverParty Name",
+            "TotalAmount": 234,
+            "TaxTotalAmount": 34,
+            "docType": "Order"
+        },
+        {
+            "documentUUID": "76543210-84e6-431f-b051-b8b2d1ee1017",
+            "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
+            "postedAt": "2018-06-05T10:09:38.071+08:00",
+            "status": "SENT",
+            "ID": "1002",
+            "sender": "SenderParty Name",
+            "receiver": "ReceiverParty Name",
+            "TotalAmount": 117,
+            "TaxTotalAmount": 117,
+            "docType": "Order"
+        }
+     ]
+    }
+    ```
+    
+## /document/convert
+
+- Request
+   > 请求 示例
+   ```json
+    {
+      "toDocType": "Invoice",
+      "body": {
+        ... // Order Document Entity
+      }
+    }
+    ```
+
+- Response
+
+    > 正常返回
+    ```json
+    {
+     "errCode": 0,
+     "body": {
+       ... // Invoice Document Entity
+     }
+    }
+    ```
+    
+    > 异常返回 示例
+    ```json
+    {
+      "errCode": 400,
+      "body": {
+        "errMsg": "文档格式校验失败"
       }
     }
     ```
