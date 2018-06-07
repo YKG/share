@@ -40,7 +40,7 @@
 
 - Response
 
-    > 正常返回
+    > 正常返回 示例
     ```json
     {
      "errCode": 0,
@@ -50,7 +50,7 @@
     }
     ```
     
-    > 参数非法
+    > 参数非法 示例
     ```json
     {
       "errCode": 400,
@@ -81,7 +81,7 @@
     }
     ```
     
-    > 异常返回
+    > 异常返回 示例
     ```json
     {
       "errCode": 404,
@@ -102,7 +102,7 @@
 
 - Response
 
-    > 正常返回
+    > 正常返回 示例
     ```json
     {
      "errCode": 0,
@@ -112,7 +112,7 @@
     }
     ```
     
-    > 异常返回
+    > 异常返回 示例
     ```json
     {
       "errCode": 404,
@@ -188,6 +188,7 @@
 ## /document/query
 
 - Request
+    > 请求 示例
     ```json
     {
       "param1": "param1 value",
@@ -235,8 +236,8 @@
 ## /document/convert
 
 - Request
-   > 请求 示例
-   ```json
+    > 请求 示例
+    ```json
     {
       "toDocType": "Invoice",
       "body": {
