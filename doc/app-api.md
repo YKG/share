@@ -1,8 +1,8 @@
 # Stock API
 
-| URL                              | Method           | Request Body            | Response Body          | Function          |
-| :-------------                   | :-------------   | :-------------          | :-------------         | :-------------    |
-| /app/xl.stock/in/quality-inspect | POST             | {batchID, QIR}          | {retCode}           | 添加入库质量检查报告 |
+| URL                                     | Method           | Request Body            | Response Body          | Function          |
+| :-------------                          | :-------------   | :-------------          | :-------------         | :-------------    |
+| /app/xl.stock/in/quality-inspect/create | POST             | {batchID, QIR}          | {retCode}           | 添加入库质量检查报告 |
 
 
 ## 请求/响应 说明
