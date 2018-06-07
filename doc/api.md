@@ -1,7 +1,7 @@
 # Document API
 
 
-| URL                                                | Method           | Body               | Return                           | Function         |
+| URL                                                | Method           | Request Body       | Response Body                    | Function         |
 | -------------                                      | -------------    |-------------       |-------------                     |-------------     |
 | [/document/create](#documentcreate)                | POST             | [{doc}](#document-entity-doc)  | {docUUID}            | 创建文档          |
 | [/document/get](#documentget)                      | GET              | {docUUID}          | {doc}                            | 获取文档          |
