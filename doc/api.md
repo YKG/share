@@ -5,7 +5,7 @@
 | -------------                                      | -------------    |-------------       |-------------                     |-------------     |
 | [/document/create](#documentcreate)                | POST             | [{doc}](#document-entity-doc)  | {docUUID}            | 创建文档          |
 | [/document/get](#documentget)                      | GET              | {docUUID}          | {doc}                            | 获取文档          |
-| [/document/send](#documentget)                     | POST             | {docUUID, doc}     | {docStatus}                      | 发送文档          |
+| [/document/send](#documentsend)                     | POST             | {docUUID, doc}     | {docStatus}                      | 发送文档          |
 | [/document/status/get](#documentstatusget)         | GET              | {docUUID}          | {docStatus}                      | 获取文档状态      |
 | [/document//status/update](#documentstatusupdate)  | POST             | {docUUID, docStatus} | {status}                       | 更新文档状态      |
 | [/document/query](#documentquery)                  | GET              | {queryParam}       | [{docInfoList}](#document-info-entity-docinfo) | 获取文档列表  |
@@ -107,7 +107,7 @@
     {
      "errCode": 0,
      "body": {
-       ... // TBD
+       "documentStatus": "ACCEPTED"
      }
     }
     ```
