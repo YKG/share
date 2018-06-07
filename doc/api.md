@@ -107,7 +107,7 @@
     {
      "errCode": 0,
      "body": {
-       "documentStatus": "ACCEPTED"
+       "documentStatus": "SENT"
      }
     }
     ```
