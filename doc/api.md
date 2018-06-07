@@ -3,12 +3,12 @@
 
 | URL                       | Method           | Body               | Return           | Function         |
 | -------------             | -------------    |-------------       |-------------     |-------------     |
-| [/document/create](#documentcreate)          | POST             | {doc}              | {docUUID}          | 创建文档          |
+| [/document/create](#documentcreate)          | POST             | [{doc}](#document-entity-doc)              | {docUUID}          | 创建文档          |
 | [/document/get](#documentget)             | GET              | {docUUID}          | {doc}            | 获取文档          |
 | [/document/send](#documentget)            | POST             | {docUUID, doc}     |                  | 发送文档          |
 | [/document/status/get](#documentstatusget)      | GET              | {docUUID}          | {docStatus}      | 获取文档状态      |
 | [/document//status/update](#documentstatusupdate)  | POST             | {docUUID, docStatus} | {status}       | 更新文档状态      |
-| [/document/query](#documentquery)           | GET              |                    | {docInfoList}    | 获取文档列表      |
+| [/document/query](#documentquery)           | GET              |                    | [{docInfoList}](#document-info-entity-docinfo)    | 获取文档列表      |
 | [/document/convert](#documentconvert)         | POST             | {doc, toDocType}   | {doc}            | 文档转换          |
 
 
@@ -18,10 +18,11 @@
 
     | Entity                    | Description            | Type            | Sample                   | 
     | -------------             | -------------          |-------------    |-------------             |
-    | {doc}                     | Document Entity        | object          |                          | 
+    | [{doc}](#document-entity-doc) | Document Entity    | object          |                          | 
+    | [{docInfo}](#document-info-entity-docinfo) | Document Info | object  |                          | 
     | {docUUID}                 | Document UUID          | string(uuid)    | `85aac415-73bd-480f-85b7-70ed1cec6506` | 
     | {docStatus}               | Document Status        | string          | `ACCEPTED` / `REJECTED`  | 
-    | {docInfoList}             | Document Info List     | object          |                          | 
+    | {docInfoList}             | Document Info List     | array           |                          | 
     | {toDocType}               | Document Type          | string          | `Order` / `Invoice`      | 
 
 - 所有请求的响应码都是 `200`，异常响应的错误码放在响应体中
