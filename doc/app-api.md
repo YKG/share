@@ -2,10 +2,10 @@
 
 | URL                              | Method           | Request Body            | Response Body          | Function          |
 | :-------------                   | :-------------   | :-------------          | :-------------         | :-------------    |
-| /app/xl.stock/in/quality-inspect | POST             | {batchID, [QIR](#abbr)} | {retCode}           | 添加入库质量检查报告 |
+| /app/xl.stock/in/quality-inspect | POST             | {batchID, QIR}          | {retCode}           | 添加入库质量检查报告 |
 
 
-## Abbreviation
+## 请求/响应 说明
 
 | Entity              | 说明              | 备注                            | 
 | :-------------      | :-------------    | :-------------                 | 
