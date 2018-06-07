@@ -28,7 +28,7 @@
 
 - Document Entity (`{doc}`)
 
-    - Order Sample
+    - Order Sample (JSON)
         ```json
         {
             "Order": {
@@ -164,6 +164,80 @@
                 ]
             }
         }
+        ```
+    
+    - Order Sample (XML)
+        ```xml
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <Order>
+            <ID>1006</ID>
+            <IssueDate>2018-06-06</IssueDate>
+            <Note>note</Note>
+            <BuyerCustomerParty>
+                <Party>
+                    <PartyIdentification>
+                        <ID>122d17aa-35db-4aea-a74e-9de7deb13b33</ID>
+                    </PartyIdentification>
+                    <PartyName>
+                        <Name>SenderParty</Name>
+                    </PartyName>
+                </Party>
+            </BuyerCustomerParty>
+            <SellerSupplierParty>
+                <Party>
+                    <PartyIdentification>
+                        <ID>222d17aa-35db-4aea-a74e-9de7deb13b33</ID>
+                    </PartyIdentification>
+                    <PartyName>
+                        <Name>ReceiverParty</Name>
+                    </PartyName>
+                </Party>
+            </SellerSupplierParty>
+            <Delivery>
+                <DeliveryLocation>
+                    <Address>
+                        <StreetName>xinghu s.t.</StreetName>
+                    </Address>
+                </DeliveryLocation>
+            </Delivery>
+            <TaxTotal>
+                <TaxAmount currencyID="CNY">17.00</TaxAmount>
+            </TaxTotal>
+            <AnticipatedMonetaryTotal>
+                <LineExtensionAmount currencyID="CNY">200.00</LineExtensionAmount>
+                <TaxExclusiveAmount currencyID="CNY">34.00</TaxExclusiveAmount>
+                <TaxInclusiveAmount currencyID="CNY">234.00</TaxInclusiveAmount>
+                <PayableAmount currencyID="CNY">234.00</PayableAmount>
+            </AnticipatedMonetaryTotal>
+            <OrderLine>
+                <LineItem>
+                    <ID>101</ID>
+                    <Quantity unitCode="EA">1.00</Quantity>
+                    <LineExtensionAmount currencyID="CNY">100.00</LineExtensionAmount>
+                    <TotalTaxAmount currencyID="CNY">17.00</TotalTaxAmount>
+                    <Price>
+                        <PriceAmount currencyID="CNY">100.00</PriceAmount>
+                    </Price>
+                    <Item>
+                        <Name>MacBook Air</Name>
+                    </Item>
+                </LineItem>
+            </OrderLine>
+            <OrderLine>
+                <LineItem>
+                    <ID>102</ID>
+                    <Quantity unitCode="EA">1.00</Quantity>
+                    <LineExtensionAmount currencyID="CNY">100.00</LineExtensionAmount>
+                    <TotalTaxAmount currencyID="CNY">17.00</TotalTaxAmount>
+                    <Price>
+                        <PriceAmount currencyID="CNY">100.00</PriceAmount>
+                    </Price>
+                    <Item>
+                        <Name>MacBook Pro</Name>
+                    </Item>
+                </LineItem>
+            </OrderLine>
+        </Order>
         ```
 
 - Document Info Entity (`{docInfo}`)
