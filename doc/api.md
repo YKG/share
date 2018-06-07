@@ -3,7 +3,7 @@
 
 | URL                       | Method           | Body               | Return           | Function         |
 | -------------             | -------------    |-------------       |-------------     |-------------     |
-| /document/create          | POST             | {doc}              | {docUUID}          | 创建文档          |
+| [/document/create](#documentcreate)          | POST             | {doc}              | {docUUID}          | 创建文档          |
 | /document/get             | GET              | {docUUID}          | {doc}            | 获取文档          |
 | /document/send            | POST             | {docUUID, doc}     |                  | 发送文档          |
 | /document/status/get      | GET              | {docUUID}          | {docStatus}      | 获取文档状态      |
@@ -12,10 +12,10 @@
 | /document/convert         | POST             | {doc, toDocType}   | {doc}            | 文档转换          |
 
 
-## I/O
+## I/O Convention
 
-- Convention
-    
+- Entities Table
+
     | Entity                    | Description            | Type            | Sample                   | 
     | -------------             | -------------          |-------------    |-------------             |
     | {doc}                     | Document Entity        | object          |                          | 
@@ -23,8 +23,8 @@
     | {docStatus}               | Document Status        | string          | `ACCEPTED` / `REJECTED`  | 
     | {docInfoList}             | Document Info List     | object          |                          | 
     | {toDocType}               | Document Type          | string          | `Order` / `Invoice`      | 
-    
 
+- 所有请求的响应码都是 `200`，异常响应的错误码放在响应体中
 
 - Document Entity (`{doc}`)
 
@@ -255,36 +255,68 @@
         }
         ```
 
-- `/document/create`
+## /document/create
 
-    - Request
-        ```json
-        {
-          "body": {
-            ... // Document Entity
-          }
-        }
-        ```
+- Request
+    ```json
+    {
+      "body": {
+        ... // Document Entity
+      }
+    }
+    ```
 
-    - Response
+- Response
+
+    > 正常返回
+    ```json
+    {
+     "errCode": 0,
+     "body": {
+       "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+     }
+    }
+    ```
     
-        > 正常返回
-        ```json
-        {
-         "errCode": 0,
-         "body": {
-           "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
-         }
-        }
-        ```
+    > 参数非法
+    ```json
+    {
+      "errCode": 400,
+      "body": {
+        "errMsg": "请求参数非法"
+      }
+    }
+    ```
         
-        > 参数非法
-        ```json
-        {
-          "errCode": 400,
-          "body": {
-            "errMsg": "请求参数非法"
-          }
-        }
-        ```
-        
+## /document/get
+
+- Request
+    ```json
+    {
+      "body": {
+        "documentUUID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+      }
+    }
+    ```
+
+- Response
+
+    > 正常返回
+    ```json
+    {
+     "errCode": 0,
+     "body": {
+       ... // Document Entity
+     }
+    }
+    ```
+    
+    > 异常返回
+    ```json
+    {
+      "errCode": 404,
+      "body": {
+        "errMsg": "文档没有找到"
+      }
+    }
+    ```
