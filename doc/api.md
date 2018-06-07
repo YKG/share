@@ -16,7 +16,7 @@
 
 - Entities Table
 
-    | Entity                    | Description            | Type            | Sample                   | 
+    | Entity                    | Description            | JSON Type       | Sample                   | 
     | -------------             | -------------          |-------------    |-------------             |
     | [{doc}](#document-entity-doc) | Document Entity    | object          |                          | 
     | [{docInfo}](#document-info-entity-docinfo) | Document Info | object  |                          | 
