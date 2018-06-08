@@ -9,9 +9,6 @@
 | [/document//status/update](#documentstatusupdate)  | POST             | {docUUID, docStatus} | {docStatus}                    | 更新文档状态      |
 | [/document/query](#documentquery)                  | GET              | {queryParam}       | [{docInfoList}](#document-info-entity-docinfo) | 获取文档列表  |
 | [/document/convert](#documentconvert)              | POST             | {doc, toDocType}   | {doc}                            | 文档转换          |
-| /app/xl.stock/             | POST             | {doc, toDocType}   | {doc}                            | 文档转换          |
-| /app/xl.stock/quantity             | POST             | {doc, toDocType}   | {doc}                            | 文档转换          |
-
 
 ## I/O Convention
 
