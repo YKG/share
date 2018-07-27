@@ -1,4 +1,4 @@
-# Document API
+# document-biz API 时间格式示例
 
 
 ## DespatchAdviceSamle
@@ -10,6 +10,15 @@
 }
 ```
 
+## ReceipthAdviceSamle
+```json5
+{
+  "DocumentType": "DespatchAdvice",                     // 文档类型
+  "IssueDate": 1530230400000,                           // 填报日期
+  "PostingDate": 1530230400000,                         // 过账日期
+  // ...
+}
+```
 
 
 ## /document/create
