@@ -55,7 +55,7 @@
     {
     	"pageNum": 1,
     	"pageSize": 3,
-    	"isArchived": true                                      // true: archive ; false: unarchive
+    	"isArchived": true                                      // true: archived ; false: unarchived
     }
     ```
 
@@ -142,7 +142,7 @@
             "counterparty": "...",
             "sender": "...",
             "receiver": "...",
-            "isArchived": true                                  // true: archive ; false: unarchive
+            "isArchived": true                                  // true: archived ; false: unarchived
         },
         "ok": true
     }
