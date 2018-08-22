@@ -84,23 +84,23 @@
 - RequestBody 示例
     ```json5
     {
+      "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a896",
       "documentType": "Order",
-      "fieldConfig": {
-    	  "configGroupUUID": null,
-    	  "configUUID": null,
-    	  "description": "描述",
-    	  "displayText": "显示字符",
-    	  "fieldName": "aselect",
-    	  "fieldType": "string",
-    	  "inputType": "select",
-    	  "invalidTip": "输入非法",
-    	  "isRequired": true,
-    	  "isVisible": true,
-    	  "regex": "^\\w+$",
-    	  "regexDescription": "字段名称regex"
-    	},
       "role": "Buyer",
-      "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a896"
+      "fieldConfig": {
+          "configGroupUUID": null,
+          "configUUID": null,
+          "description": "描述",
+          "displayText": "显示字符",
+          "fieldName": "aselect",
+          "fieldType": "string",
+          "inputType": "select",
+          "invalidTip": "输入非法",
+          "isRequired": true,
+          "isVisible": true,
+          "regex": "^\\w+$",
+          "regexDescription": "字段名称regex"
+       }
     }
     ```
 
