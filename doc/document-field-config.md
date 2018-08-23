@@ -43,8 +43,8 @@
                 "description": "描述",
                 "isRequired": true,
                 "isVisible": true,
-                "fieldType": "string",
-                "inputType": "select",
+                "fieldType": "DocField",                                        // 单据字段
+                "inputType": "SELECT",                                          // 下拉列表
                 "regex": "^\\w+$",
                 "invalidTip": "输入非法",
                 "regexDescription": "字段名称regex"
@@ -57,8 +57,8 @@
                 "description": "描述",
                 "isRequired": true,
                 "isVisible": true,
-                "fieldType": "string",
-                "inputType": "select",
+                "fieldType": "LineField",                                       // 行字段
+                "inputType": "TEXT",                                            // 文本框
                 "regex": "^\\w+$",
                 "invalidTip": "输入非法",
                 "regexDescription": "字段名称regex"
@@ -94,7 +94,7 @@
           "displayText": "显示字符",
           "fieldName": "aselect",
           "fieldType": "string",
-          "inputType": "select",
+          "inputType": "TEXT",
           "invalidTip": "输入非法",
           "isRequired": true,
           "isVisible": true,
@@ -164,7 +164,7 @@
     	  "displayText": "显示字符",
     	  "fieldName": "adate",
     	  "fieldType": "adate2",
-    	  "inputType": "select",
+    	  "inputType": "TEXT",
     	  "invalidTip": "输入非法",
     	  "isRequired": true,
     	  "isVisible": true,
@@ -216,7 +216,8 @@
             "isRequired": true,
             "isVisible": true,
             "fieldType": "adate",
-            "inputType": "select",
+            "inputType": "SELECT",                                          // 下拉列表
+            "selectOptions": [{key:"11",val:"32" }, {key:"11",val:"32" }]   // 下拉列表键值对
             "regex": "^\\w+$",
             "invalidTip": "输入非法",
             "regexDescription": "字段名称regex"
