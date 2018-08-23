@@ -81,7 +81,7 @@
     POST
     ```
 
-- RequestBody 示例
+- RequestBody 示例 1 (文本字段)
     ```json5
     {
       "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a896",
@@ -95,6 +95,29 @@
           "fieldName": "aselect",
           "fieldType": "DocField",
           "inputType": "TEXT",
+          "invalidTip": "输入非法",
+          "isRequired": true,
+          "isVisible": true,
+          "regex": "^\\w+$",
+          "regexDescription": "字段名称regex"
+       }
+    }
+    ```
+- RequestBody 示例 2 (下拉字段)
+    ```json5
+    {
+      "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a896",
+      "documentType": "Order",
+      "role": "Buyer",
+      "fieldConfig": {
+          "configGroupUUID": null,
+          "configUUID": null,
+          "description": "描述",
+          "displayText": "显示字符",
+          "fieldName": "aselect",
+          "fieldType": "DocField",
+          "inputType": "SELECT",                                          // 下拉列表
+          "selectOptions": [{key:"11",val:"32" }, {key:"11",val:"32" }]   // 下拉列表键值对
           "invalidTip": "输入非法",
           "isRequired": true,
           "isVisible": true,
@@ -164,7 +187,8 @@
     	  "displayText": "显示字符",
     	  "fieldName": "adate",
     	  "fieldType": "DocField",
-    	  "inputType": "TEXT",
+    	  "inputType": "SELECT",                                          // 下拉列表
+          "selectOptions": [{key:"11",val:"32" }, {key:"11",val:"32" }]   // 下拉列表键值对
     	  "invalidTip": "输入非法",
     	  "isRequired": true,
     	  "isVisible": true,
