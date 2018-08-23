@@ -93,7 +93,7 @@
           "description": "描述",
           "displayText": "显示字符",
           "fieldName": "aselect",
-          "fieldType": "string",
+          "fieldType": "DocField",
           "inputType": "TEXT",
           "invalidTip": "输入非法",
           "isRequired": true,
@@ -163,7 +163,7 @@
     	  "description": "描述1212",
     	  "displayText": "显示字符",
     	  "fieldName": "adate",
-    	  "fieldType": "adate2",
+    	  "fieldType": "DocField",
     	  "inputType": "TEXT",
     	  "invalidTip": "输入非法",
     	  "isRequired": true,
@@ -215,7 +215,7 @@
             "description": "描述1212",
             "isRequired": true,
             "isVisible": true,
-            "fieldType": "adate",
+            "fieldType": "DocField",
             "inputType": "SELECT",                                          // 下拉列表
             "selectOptions": [{key:"11",val:"32" }, {key:"11",val:"32" }]   // 下拉列表键值对
             "regex": "^\\w+$",
