@@ -21,7 +21,7 @@
     ```json5
     {
       "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a896",       // CompanyID
-      "role": "Buyer",
+      "role": "Sender",                                         // Sender / Receiver
       "documentType": "Order"
     }
     ```
