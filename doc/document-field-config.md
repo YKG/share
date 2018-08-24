@@ -48,6 +48,7 @@
                 "regex": "^\\w+$",
                 "invalidTip": "输入非法",
                 "regexDescription": "字段名称regex"
+                "type": 2                       // 1: 系统字段，可配验证规则; 2: 完全可配置字段
             },
             {
                 "configGroupUUID": "dfd02693-bb70-4e1c-8ad2-d23cc671cebf",
@@ -62,6 +63,7 @@
                 "regex": "^\\w+$",
                 "invalidTip": "输入非法",
                 "regexDescription": "字段名称regex"
+                "type": 2                      // 1: 系统字段，可配验证规则; 2: 完全可配置字段
             }
         ],
         "ok": true
@@ -99,7 +101,8 @@
           "isRequired": true,
           "isVisible": true,
           "regex": "^\\w+$",
-          "regexDescription": "字段名称regex"
+          "regexDescription": "字段名称regex",
+          "type": 2                      // 1: 系统字段，可配验证规则; 2: 完全可配置字段
        }
     }
     ```
@@ -122,7 +125,8 @@
           "isRequired": true,
           "isVisible": true,
           "regex": "^\\w+$",
-          "regexDescription": "字段名称regex"
+          "regexDescription": "字段名称regex",
+          "type": 2                      // 1: 系统字段，可配验证规则; 2: 完全可配置字段
        }
     }
     ```
@@ -175,14 +179,12 @@
     POST
     ```
 
-- RequestBody 示例
+- RequestBody 示例 (config.type == 2)
     ```json5
     {
     	"uuid": "3e918b4d-e735-4456-80c5-1bddaba6a730",
     	"fieldConfig": 
     	{
-    	  "configGroupUUID": null,
-    	  "configUUID": "bb15da22-b890-4ceb-b830-d42c3676a896",
     	  "description": "描述1212",
     	  "displayText": "显示字符",
     	  "fieldName": "adate",
@@ -193,6 +195,19 @@
     	  "isRequired": true,
     	  "isVisible": true,
     	  "regex": "^\\w+$",
+    	  "regexDescription": "字段名称regex"
+    	}
+    }
+    ```
+
+- RequestBody 示例 (config.type == 1)
+    ```json5
+    {
+    	"uuid": "3e918b4d-e735-4456-80c5-1bddaba6a730",
+    	"fieldConfig": 
+    	{
+    	  "regex": "^\\w+$",
+          "invalidTip": "输入非法",
     	  "regexDescription": "字段名称regex"
     	}
     }
@@ -244,7 +259,8 @@
             "selectOptions": [{key:"11",val:"32" }, {key:"11",val:"32" }]   // 下拉列表键值对
             "regex": "^\\w+$",
             "invalidTip": "输入非法",
-            "regexDescription": "字段名称regex"
+            "regexDescription": "字段名称regex",
+            "type": 2                       // 1: 系统字段，可配验证规则; 2: 完全可配置字段
         },
         "ok": true
     }
