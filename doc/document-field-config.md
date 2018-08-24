@@ -182,34 +182,34 @@
 - RequestBody 示例 (config.type == 2)
     ```json5
     {
-    	"uuid": "3e918b4d-e735-4456-80c5-1bddaba6a730",
-    	"fieldConfig": 
-    	{
-    	  "description": "描述1212",
-    	  "displayText": "显示字符",
-    	  "fieldName": "adate",
-    	  "fieldType": "DocField",
-    	  "inputType": "SELECT",                                          // 下拉列表
+        "uuid": "3e918b4d-e735-4456-80c5-1bddaba6a730",
+        "fieldConfig": 
+        {
+          "description": "描述1212",
+          "displayText": "显示字符",
+          "fieldName": "adate",
+          "fieldType": "DocField",
+          "inputType": "SELECT",                                          // 下拉列表
           "selectOptions": [{key:"11",val:"32" }, {key:"11",val:"32" }]   // 下拉列表键值对
-    	  "invalidTip": "输入非法",
-    	  "isRequired": true,
-    	  "isVisible": true,
-    	  "regex": "^\\w+$",
-    	  "regexDescription": "字段名称regex"
-    	}
+          "invalidTip": "输入非法",
+          "isRequired": true,
+          "isVisible": true,
+          "regex": "^\\w+$",
+          "regexDescription": "字段名称regex"
+        }
     }
     ```
 
 - RequestBody 示例 (config.type == 1)
     ```json5
     {
-    	"uuid": "3e918b4d-e735-4456-80c5-1bddaba6a730",
-    	"fieldConfig": 
-    	{
-    	  "regex": "^\\w+$",
+        "uuid": "3e918b4d-e735-4456-80c5-1bddaba6a730",
+        "fieldConfig": 
+        {
+          "regex": "^\\w+$",
           "invalidTip": "输入非法",
-    	  "regexDescription": "字段名称regex"
-    	}
+          "regexDescription": "字段名称regex"
+        }
     }
     ```
 
