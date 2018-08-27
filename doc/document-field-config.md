@@ -1,13 +1,13 @@
 # document-biz API - Document fields config
 
 
-| URL                                                |  Function              |
-| :-------------                                     | :-------------         |
-| [/document/config/query](#documentconfigquery)     | 字段配置列表            |
-| [/document/config/create](#documentconfigcreate)   | 增                     |
-| [/document/config/delete](#documentconfigdelete)   | 删                     |
-| [/document/config/update](#documentconfigupdate)   | 改                     |
-| [/document/config/get](#documentconfigget)         | 查                     |
+| URL                                                     |  Function              |
+| :-------------                                          | :-------------         |
+| [/mgmt/document/config/query](#documentconfigquery)     | 字段配置列表            |
+| [/mgmt/document/config/create](#documentconfigcreate)   | 增                     |
+| [/mgmt/document/config/delete](#documentconfigdelete)   | 删                     |
+| [/mgmt/document/config/update](#documentconfigupdate)   | 改                     |
+| [/mgmt/document/config/get](#documentconfigget)         | 查                     |
 
         
 ## /document/config/query
