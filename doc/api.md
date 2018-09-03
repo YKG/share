@@ -201,33 +201,74 @@
     > 正常返回 示例
     ```json5
     {
-     "errCode": 0,
-     "body": [
-        {
-            "documentUUID": "704e90ab-84e6-431f-b051-b8b2d1ee1015",
-            "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
-            "postedAt": "2018-06-04T10:09:37.071+08:00",
-            "status": "SENT",
-            "ID": "1001",
-            "sender": "SenderParty Name",
-            "receiver": "ReceiverParty Name",
-            "TotalAmount": 234,
-            "TaxTotalAmount": 34,
-            "docType": "Order"
+        "status": {
+            "returnCode": "200"
         },
-        {
-            "documentUUID": "76543210-84e6-431f-b051-b8b2d1ee1017",
-            "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
-            "postedAt": "2018-06-05T10:09:38.071+08:00",
-            "status": "SENT",
-            "ID": "1002",
-            "sender": "SenderParty Name",
-            "receiver": "ReceiverParty Name",
-            "TotalAmount": 117,
-            "TaxTotalAmount": 117,
-            "docType": "Order"
-        }
-     ]
+        "body": {
+            "pageMeta": {
+                "pageNum": 1,
+                "pageSize": 3,
+                "total": 11,
+                "pages": 4
+            },
+            "items": [
+                {
+                    "documentUUID": "927e217b-ac2f-490b-9a7c-5c52f87d549b",
+                    "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a855",
+                    "documentID": "DA-103310X",
+                    "issueDate": 1530230400000,
+                    "createTime": 1534212465692,
+                    "lastModifyTime": 1534212465692,
+                    "documentType": "DespatchAdvice",
+                    "actualDocumentType": "DespatchAdvice",
+                    "status": "DRAFT",
+                    "allowedTargetStatus": [],
+                    "role": "Seller",
+                    "counterpartyUUID": "4f025712-b650-4e97-a370-f4f162226106",
+                    "counterparty": "未来科技",
+                    "sender": "中科",
+                    "receiver": "未来科技",
+                    "isArchived": false
+                },
+                {
+                    "documentUUID": "7162038f-2996-4f2c-b947-4c510b6ddb9f",
+                    "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a855",
+                    "documentID": "DA-10310",
+                    "issueDate": 1530230400000,
+                    "createTime": 1534212433728,
+                    "lastModifyTime": 1534212433728,
+                    "documentType": "DespatchAdvice",
+                    "actualDocumentType": "DespatchAdvice",
+                    "status": "DRAFT",
+                    "allowedTargetStatus": [],
+                    "role": "Seller",
+                    "counterpartyUUID": "4f025712-b650-4e97-a370-f4f162226106",
+                    "counterparty": "未来科技",
+                    "sender": "中科",
+                    "receiver": "未来科技",
+                    "isArchived": false
+                },
+                {
+                    "documentUUID": "1eaf4a55-6488-4fb9-87cf-598fc0a16ed7",
+                    "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a855",
+                    "documentID": "DA-1031",
+                    "issueDate": 1530230400000,
+                    "createTime": 1532661905581,
+                    "lastModifyTime": 1533627665884,
+                    "documentType": "DespatchAdvice",
+                    "actualDocumentType": "DespatchAdvice",
+                    "status": "DRAFT",
+                    "allowedTargetStatus": [],
+                    "role": "Seller",
+                    "counterpartyUUID": "4f025712-b650-4e97-a370-f4f162226106",
+                    "counterparty": "未来科技",
+                    "sender": "中科",
+                    "receiver": "未来科技",
+                    "isArchived": false
+                }
+            ]
+        },
+        "ok": true
     }
     ```
     
@@ -272,138 +313,82 @@
 - Order Sample (JSON)
     ```json5
     {
-        "Order": {
-            "ID": {
-                "value": "1006"
-            },
-            "IssueDate": "2018-06-06",
-            "Note": {
-                "value": "note"
-            },
-            "BuyerCustomerParty": {
-                "Party": {
-                    "PartyIdentification": {
-                        "ID": {
-                            "value": "122d17aa-35db-4aea-a74e-9de7deb13b33"
-                        }
-                    },
-                    "PartyName": {
-                        "Name": {
-                            "value": "SenderParty"
-                        }
-                    }
-                }
-            },
-            "SellerSupplierParty": {
-                "Party": {
-                    "PartyIdentification": {
-                        "ID": {
-                            "value": "222d17aa-35db-4aea-a74e-9de7deb13b33"
-                        }
-                    },
-                    "PartyName": {
-                        "Name": {
-                            "value": "ReceiverParty"
-                        }
-                    }
-                }
-            },
-            "Delivery": {
-                "DeliveryLocation": {
-                    "Address": {
-                        "StreetName": {
-                            "value": "XingHu Street"
-                        }
-                    }
-                }
-            },
-            "TaxTotal": {
-                "TaxAmount": {
-                    "value": 17,
-                    "currencyID": "CNY"
-                }
-            },
-            "AnticipatedMonetaryTotal": {
-                "LineExtensionAmount": {
-                    "value": 200,
-                    "currencyID": "CNY"
-                },
-                "TaxExclusiveAmount": {
-                    "value": 34,
-                    "currencyID": "CNY"
-                },
-                "TaxInclusiveAmount": {
-                    "value": 234,
-                    "currencyID": "CNY"
-                },
-                "PayableAmount": {
-                    "value": 234,
-                    "currencyID": "CNY"
-                }
-            },
-            "OrderLine": [
-                {
-                    "LineItem": {
-                        "ID": {
-                            "value": "101"
-                        },
-                        "Quantity": {
-                            "value": 1,
-                            "unitCode": "EA"
-                        },
-                        "LineExtensionAmount": {
-                            "value": 100,
-                            "currencyID": "CNY"
-                        },
-                        "TotalTaxAmount": {
-                            "value": 17,
-                            "currencyID": "CNY"
-                        },
-                        "Price": {
-                            "PriceAmount": {
-                                "value": 100,
-                                "currencyID": "CNY"
-                            }
-                        },
-                        "Item": {
-                            "Name": {
-                                "value": "MacBook Air"
-                            }
-                        }
-                    }
-                },
-                {
-                    "LineItem": {
-                        "ID": {
-                            "value": "102"
-                        },
-                        "Quantity": {
-                            "value": 1,
-                            "unitCode": "EA"
-                        },
-                        "LineExtensionAmount": {
-                            "value": 100,
-                            "currencyID": "CNY"
-                        },
-                        "TotalTaxAmount": {
-                            "value": 17,
-                            "currencyID": "CNY"
-                        },
-                        "Price": {
-                            "PriceAmount": {
-                                "value": 100,
-                                "currencyID": "CNY"
-                            }
-                        },
-                        "Item": {
-                            "Name": {
-                                "value": "MacBook Pro"
-                            }
-                        }
-                    }
-                }
-            ]
+      "DocumentType": "DespatchAdvice",
+      "DespatchAdviceNumber": "DA-103310X",
+      "IssueDate": 1530230400000,
+      "DespatchSupplierParty": {
+        "ID": "bb15da22-b890-4ceb-b830-d42c3676a855",
+        "Name": "中科"
+      },
+      "DespatchSupplierContact": {
+        "ID": "33470eea-545b-4d6e-b795-4aa73f25ed8a",
+        "Name": "张三" 
+      },
+      "DeliveryCustomerParty": {
+        "ID": "4f025712-b650-4e97-a370-f4f162226106",
+        "Name": "未来科技"
+      },
+      "DeliveryCustomerContact": {
+        "ID": "55470eea-545b-4d6e-b795-4aa73f25ed8a",
+        "Name": "王五"
+      },
+      "Lines": [
+        {
+          "ReceiveAddressNo" : "R1",
+          "ReceiveAddress" : "ReceiveAddress01",
+          "ReceiveFactoryNo" : "F1",
+          "ReceiveFactory" : "FACTORY1",
+          "DocumentReference": "PO-101",
+          "LineReference": "1",
+          "ID": "JFOE982FJO8",
+          "Name": "铝液",
+          "ModelName": "B-91",
+          "UnitCode": "EA",
+          "OrderedQuantity": 2,
+          "DeliveredQuantity": 2,
+          "Description": "发货描述"
+        },
+        {
+          "ReceiveAddressNo" : "R2",
+          "ReceiveAddress" : "ReceiveAddress02",
+          "ReceiveFactoryNo" : "F2",
+          "ReceiveFactory" : "FACTORY2",
+          "DocumentReference": "PO-101",
+          "LineReference": "2",
+          "ID": "JFOE982FJO8",
+          "Name": "铝液",
+          "ModelName": "B-91",
+          "UnitCode": "EA",
+          "OrderedQuantity": 2,
+          "DeliveredQuantity": 3,
+          "Description": "发货描述"
         }
+      ],
+      "DeliveryAddress": {
+        "Country": "CHN",
+        "CountrySubentity": "重庆市",
+        "CityName": "渝中区",
+        "AddressLine": "华盛路1号企业天地8号楼33A"
+      },
+      "DeliveryContact": {
+        "Name": "收货联系人姓名",
+        "Phone": "132434345465"
+      },
+      "DeliveryDate": 1530230400000,
+      "TransportModeCode": "TMC3", 
+      "TransportMeansTrackingID": "渝A-123456", 
+      "PerformingCarrierPartyContact": {
+        "ID": "55470eea-545b-4d6e-b795-4aa73f25ed8a",
+        "Name": "王五", 
+        "Phone": "12345"
+      },
+      "CarrierParty": {
+        "ID": "55470eea-545b-4d6e-b795-4aa73f25ed8a",
+        "Name": "承运方"
+      },
+      "Note": "备注",
+      "Attachments": [
+      ]
     }
     ```
 
@@ -486,15 +471,21 @@
 - Sample
     ```json5
     {
-        "documentUUID": "704e90ab-84e6-431f-b051-b8b2d1ee1015",
-        "tenantID": "122d17aa-35db-4aea-a74e-9de7deb13b33",
-        "postedAt": "2018-06-04T10:09:37.071+08:00",
-        "status": "SENT",
-        "ID": "1001",
-        "sender": "SenderParty Name",
-        "receiver": "ReceiverParty Name",
-        "TotalAmount": 234,
-        "TaxTotalAmount": 34,
-        "docType": "Order"
+        "documentUUID": "927e217b-ac2f-490b-9a7c-5c52f87d549b",
+        "tenantID": "bb15da22-b890-4ceb-b830-d42c3676a855",
+        "documentID": "DA-103310X",
+        "issueDate": 1530230400000,
+        "createTime": 1534212465692,
+        "lastModifyTime": 1534212465692,
+        "documentType": "DespatchAdvice",
+        "actualDocumentType": "DespatchAdvice",
+        "status": "DRAFT",
+        "allowedTargetStatus": [],
+        "role": "Seller",
+        "counterpartyUUID": "4f025712-b650-4e97-a370-f4f162226106",
+        "counterparty": "未来科技",
+        "sender": "中科",
+        "receiver": "未来科技",
+        "isArchived": false
     }
     ```
