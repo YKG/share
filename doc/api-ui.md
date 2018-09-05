@@ -94,6 +94,7 @@
                 "isRequired": true,
                 "inputType": "TEXT",                                                 // 文本框
                 "regex": "^\\w+$",
+                "regexDescription": "字段名称regex",
                 "invalidTip": "输入非法"
             },
             "ExtraLineRemark6": {
@@ -102,6 +103,7 @@
                 "selectOptions": [{"key":"11","val":"32" }, {"key":"11","val":"32" }],   // 下拉列表键值对
                 "invalidTip": "输入非法",
                 "isRequired": true,
+                "regexDescription": "字段名称regex",
                 "regex": "^\\w+$"
             }
         }
@@ -112,6 +114,7 @@
                 "isRequired": true,
                 "inputType": "TEXT",                                                     // 文本框
                 "regex": "^\\w+$",
+                "regexDescription": "字段名称regex",
                 "invalidTip": "输入非法"
             },
             "ExtraLineRemark3": {
@@ -120,11 +123,14 @@
                 "selectOptions": [{"key":"11","val":"32" }, {"key":"11","val":"32" }],   // 下拉列表键值对
                 "invalidTip": "输入非法",
                 "isRequired": true,
+                "regexDescription": "字段名称regex",
                 "regex": "^\\w+$"
             }
         },
         "Note": {
           "regex": "^\\w{0,200}$"
+          "regexDescription": "字段名称regex",
+          "invalidTip": "输入非法"
         }
     },
     "ok": true,
