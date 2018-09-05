@@ -7,7 +7,7 @@
     >
     > `单据行级`扩展字段: `ExtraLineRemark5` 和 `ExtraLineRemark6`
 
-    ```json
+    ```json5
     {
     "body": {
       "DocumentType": "Order",
@@ -97,34 +97,34 @@
                 "invalidTip": "输入非法"
             },
             "ExtraLineRemark6": {
-            "displayText": "行扩展字段6",
-            "inputType": "SELECT",                                                   // 下拉列表
-            "selectOptions": [{"key":"11","val":"32" }, {"key":"11","val":"32" }],   // 下拉列表键值对
-            "invalidTip": "输入非法",
-            "isRequired": true,
-            "regex": "^\\w+$"
+                "displayText": "行扩展字段6",
+                "inputType": "SELECT",                                                   // 下拉列表
+                "selectOptions": [{"key":"11","val":"32" }, {"key":"11","val":"32" }],   // 下拉列表键值对
+                "invalidTip": "输入非法",
+                "isRequired": true,
+                "regex": "^\\w+$"
             }
         }
         },
         "Extra": {
-        "ExtraLineRemark2": {
-            "displayText": "单据扩展字段2",
-            "isRequired": true,
-            "inputType": "TEXT",                                                     // 文本框
-            "regex": "^\\w+$",
-            "invalidTip": "输入非法"
-        },
-        "ExtraLineRemark3": {
-            "displayText": "单据扩展字段3",
-            "inputType": "SELECT",   
-            "selectOptions": [{"key":"11","val":"32" }, {"key":"11","val":"32" }],   // 下拉列表键值对
-            "invalidTip": "输入非法",
-            "isRequired": true,
-            "regex": "^\\w+$"
-        }
+            "ExtraLineRemark2": {
+                "displayText": "单据扩展字段2",
+                "isRequired": true,
+                "inputType": "TEXT",                                                     // 文本框
+                "regex": "^\\w+$",
+                "invalidTip": "输入非法"
+            },
+            "ExtraLineRemark3": {
+                "displayText": "单据扩展字段3",
+                "inputType": "SELECT",   
+                "selectOptions": [{"key":"11","val":"32" }, {"key":"11","val":"32" }],   // 下拉列表键值对
+                "invalidTip": "输入非法",
+                "isRequired": true,
+                "regex": "^\\w+$"
+            }
         },
         "Note": {
-        "regex": "^\\w{0,200}$"
+          "regex": "^\\w{0,200}$"
         }
     },
     "ok": true,
@@ -145,7 +145,7 @@
     >
     > `单据行级`扩展字段: `ExtraLineRemark5` 和 `ExtraLineRemark6`
     
-    ```json
+    ```json5
     {
     "body": {
       "DocumentType": "Order",
