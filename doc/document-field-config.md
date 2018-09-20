@@ -17,6 +17,13 @@
 | SELECT     | 下拉列表          |
 | DATE       | 日期             |
 | DATETIME   | 日期和时间        |
+
+## fieldType Enum
+
+| fieldType  |  备注            |
+| :----------| :-------------  |
+| DocField   | 单据级字段        |
+| LineField  | 行级字段          |
         
 ## /document/config/query
 
