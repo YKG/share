@@ -9,6 +9,14 @@
 | [/mgmt/document/config/update](#documentconfigupdate)   | 改                     |
 | [/mgmt/document/config/get](#documentconfigget)         | 查                     |
 
+## inputType Enum
+
+| inputType  |  备注            |
+| :----------| :-------------  |
+| TEXT       | 文本框           |
+| SELECT     | 下拉列表          |
+| DATE       | 日期             |
+| DATETIME   | 日期和时间        |
         
 ## /document/config/query
 
